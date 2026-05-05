@@ -610,8 +610,17 @@ color: #ffffff;
     display: inline-block;
 }
 
-.carousel_dots li {
+.carousel_dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
     list-style: none;
+}
+
+.carousel_dots li {
+    display: flex;
+    align-items: center;
 }
 
 .dot {
