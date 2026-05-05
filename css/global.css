@@ -835,9 +835,7 @@ min-width: 0;
 flex: 0 0 calc(45% - 10px);
 }
 
-.dot:last-child {
-    display: none;
-}
+
 
 
 #contact {
