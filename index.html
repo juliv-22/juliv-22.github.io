@@ -337,7 +337,7 @@ way that motivates you to continue learning. It offers quizzes and challenges th
         
         <ul class="carousel_track">
 
-            <li class="carousel_slide">
+            <li class="carousel_slide" id="otherslide1">
                 <article class="carousel_card">
                     <figure>
                         <picture>
@@ -365,7 +365,7 @@ way that motivates you to continue learning. It offers quizzes and challenges th
                 </article>
             </li>
 
-            <li class="carousel_slide">
+            <li class="carousel_slide" id="otherslide2">
                <article class="carousel_card">
                     <figure>
                         <picture>
@@ -392,7 +392,7 @@ way that motivates you to continue learning. It offers quizzes and challenges th
                  </article>
             </li>
 
-            <li class="carousel_slide">
+            <li class="carousel_slide" id="otherslide3">
                  <article class="carousel_card">
                     <figure>
                         <picture>
@@ -421,7 +421,7 @@ way that motivates you to continue learning. It offers quizzes and challenges th
 
         </ul>
 
-        <ol class="carousel_dots">
+    <ol class="carousel_dots">
     <li><a href="#otherslide1" class="dot active"></a></li>
     <li><a href="#otherslide2" class="dot"></a></li>
     <li><a href="#otherslide3" class="dot"></a></li>
@@ -474,6 +474,26 @@ way that motivates you to continue learning. It offers quizzes and challenges th
 <footer>
     <p>© 2026 Creative Portfolio. All rights reserved.</p>
 </footer>
+
+
+<script>
+    document.querySelectorAll('.carousel_dots a').forEach(dot => {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            const track = target.closest('.carousel_track');
+            track.scrollTo({
+                left: target.offsetLeft - track.offsetLeft,
+                behavior: 'smooth'
+            });
+
+            // actualiza el dot activo
+            document.querySelectorAll('.carousel_dots .dot').forEach(d => d.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
 
 </body>
 </html>
