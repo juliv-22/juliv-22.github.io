@@ -610,22 +610,21 @@ color: #ffffff;
     display: inline-block;
 }
 
-.carousel_dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
+.carousel_dots li {
     list-style: none;
 }
 
 .dot {
+    display: block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: #a1a1a1;
+    transition: all 0.3s ease;
 }
 
-.dot.active {
+.dot.active,
+.dot:hover {
     background-color: var(--acentua-2);
     width: 20px;
     border-radius: 100px;
